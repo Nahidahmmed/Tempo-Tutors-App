@@ -7,6 +7,8 @@ import {
 import './index.css'
 import Layout from './Layout/Layout';
 import Home from './Pages/Home/Home';
+import AllClasses from './Pages/AllClasses/AllClasses';
+import InstructorsPage from './Pages/InstructorsPage/InstructorsPage';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
-      }
+      },
+      {
+        path: '/allClasses',
+        element: <AllClasses></AllClasses>
+      },
+      {
+        path: '/instructors',
+        element: <InstructorsPage></InstructorsPage>
+      },
     ]
   },
 ]);
