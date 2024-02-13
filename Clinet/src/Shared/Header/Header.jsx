@@ -1,7 +1,7 @@
 
 import "./Header.css";
 
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
 // import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 
@@ -14,14 +14,14 @@ export default function Header() {
 //       .then(() => {})
 //       .catch((err) => console.log(err));
 //   };
-//   const [classes, setClasses] = useState([]);
-//   useEffect(() => {
-//     fetch("http://localhost:5000/classes")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setClasses(data);
-//       });
-//   }, []);
+  const [classes, setClasses] = useState([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BASE_URL}/classes`)
+      .then((res) => res.json())
+      .then((data) => {
+        setClasses(data);
+      });
+  }, []);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -29,9 +29,9 @@ export default function Header() {
   };
   const [isSearchVisible, setSearchVisible] = useState(false);
 
-//   const toggleSearch = () => {
-//     setSearchVisible(!isSearchVisible);
-//   };
+  const toggleSearch = () => {
+    setSearchVisible(!isSearchVisible);
+  };
 
   const menuItems = [
     <li>
@@ -55,26 +55,26 @@ export default function Header() {
       </Link>
     </li>
   ];
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const [suggestions, setSuggestions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
-//   const handleInputChange = (e) => {
-//     const inputText = e.target.value;
-//     setSearchTerm(inputText);
-//     const filteredSuggestions =
-//       inputText !== ""
-//         ? classes.filter((Class) =>
-//             Class.class_name.toLowerCase().startsWith(inputText.toLowerCase())
-//           )
-//         : [];
+  const handleInputChange = (e) => {
+    const inputText = e.target.value;
+    setSearchTerm(inputText);
+    const filteredSuggestions =
+      inputText !== ""
+        ? classes.filter((Class) =>
+            Class.class_name.toLowerCase().startsWith(inputText.toLowerCase())
+          )
+        : [];
 
-//     setSuggestions(filteredSuggestions);
-//   };
+    setSuggestions(filteredSuggestions);
+  };
 
-//   const handleSuggestionClick = (selectedCountry) => {
-//     setSearchTerm(selectedCountry.class_name);
-//     setSuggestions([]);
-//   };
+  const handleSuggestionClick = (selectedCountry) => {
+    setSearchTerm(selectedCountry.class_name);
+    setSuggestions([]);
+  };
   return (
     <div className="absolute z-50 w-full bg-black bg-opacity-60 lg:h-[85px] text-white p-4">
       <div className="flex items-center justify-between pt-3">
@@ -120,30 +120,22 @@ export default function Header() {
           <div className="container border-b-2">
             <div className="mainbox lg:w-[230px]">
               <div className="iconContainer">
-                {/* <button onClick={toggleSearch}>
-                  <FaSearch className="w-9" />
-                </button> */}
-                <button>
+                <button onClick={toggleSearch}>
                   <FaSearch className="w-9" />
                 </button>
+                
               </div>
+             
               <input
-                className="search_input w-[120px] lg:w-[185px]"
-                placeholder="search"
-                name="search"
-                type="text"
-               
-              />
-              {/* <input
                 className="search_input w-[120px] lg:w-[185px]"
                 placeholder="search"
                 name="search"
                 type="text"
                 value={searchTerm}
                 onChange={handleInputChange}
-              /> */}
+              />
             </div>
-            {/* {suggestions.length > 0 && (
+            {suggestions.length > 0 && (
               <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[123px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">
                 {suggestions.slice(0, 8).map((Class, index) => (
                   <li key={index} onClick={() => handleSuggestionClick(Class)}>
@@ -151,7 +143,7 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-            )} */}
+            )}
           </div>
         </div>
         {/* profile */}

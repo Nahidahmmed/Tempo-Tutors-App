@@ -1,14 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import Layout from './Layout/Layout';
-import Home from './Pages/Home/Home';
-import AllClasses from './Pages/AllClasses/AllClasses';
-import InstructorsPage from './Pages/InstructorsPage/InstructorsPage';
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import Layout from "./Layout/Layout";
+import Home from "./Pages/Home/Home";
+import AllClasses from "./Pages/AllClasses/AllClasses";
+import InstructorsPage from "./Pages/InstructorsPage/InstructorsPage";
+import ClassDetail from "./Pages/ClassDetail/ClassDetail";
+import InstructorsDetail from "./Pages/InstructorsDetail/InstructorsDetail";
+import AuthProvider from "./Providers/AuthProvider";
+import SignUp from "./Pages/SignUp/SignUp";
+import Login from './Pages/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -17,23 +19,44 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
-        path: '/allClasses',
-        element: <AllClasses></AllClasses>
+        path: "/allClasses",
+        element: <AllClasses></AllClasses>,
       },
       {
-        path: '/instructors',
-        element: <InstructorsPage></InstructorsPage>
+        path: '/login',
+        element: <Login></Login>
       },
-    ]
+      {
+        path: '/signUp',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: "/instructors",
+        element: <InstructorsPage></InstructorsPage>,
+      },
+      {
+        path: "/detail/:id",
+        element: <ClassDetail></ClassDetail>,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_BASE_URL}/classes/${params.id}`),
+      },
+      {
+        path: "/instructorsDetail/:id",
+        element: <InstructorsDetail></InstructorsDetail>,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_BASE_URL}/instructors/${params.id}`),
+      },
+    ],
   },
 ]);
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);
