@@ -16,22 +16,10 @@ export default function PopularClasses() {
 
   if (loading) {
     return (
-      <div className="pt-[25%] pb-[20%]">
-        <div className="Container mx-auto">
-          <div className="plate pl-3">
-            <div className="black">
-              <div className="border">
-                <div className="white">
-                  <div className="center"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="player">
-            <div className="rect"></div>
-            <div className="circ"></div>
-          </div>
-        </div>
+      <div class="loader mx-auto py-[35%]">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
       </div>
     );
   }

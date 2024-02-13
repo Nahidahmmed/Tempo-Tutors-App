@@ -10,28 +10,16 @@ const InstructorsPage = () => {
     setLoading(true);
     fetch(`${import.meta.env.VITE_BASE_URL}/instructors`)
       .then((res) => res.json())
-      .then((data) => setInstructors(data));
-    setLoading(false);
+      .then((data) => {setInstructors(data) ,setLoading(false)});
+    
   }, []);
 
   if (loading) {
     return (
-      <div className="pt-[25%] pb-[20%]">
-        <div className="Container mx-auto">
-          <div className="plate pl-3">
-            <div className="black">
-              <div className="border">
-                <div className="white">
-                  <div className="center"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="player">
-            <div className="rect"></div>
-            <div className="circ"></div>
-          </div>
-        </div>
+      <div class="loader mx-auto py-[30%]">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
       </div>
     );
   }
@@ -46,7 +34,10 @@ const InstructorsPage = () => {
       ></Banner>
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-24 max-w-screen-xl mx-auto">
         {instructors.map((instructor) => (
-          <InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>
+          <InstructorCard
+            key={instructor._id}
+            instructor={instructor}
+          ></InstructorCard>
         ))}
       </div>
     </div>

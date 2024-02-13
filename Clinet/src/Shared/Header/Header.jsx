@@ -122,7 +122,7 @@ export default function Header() {
                 value={searchTerm}
                 onChange={handleInputChange}
               />
-              <button onClick={handleLogout}>logout</button>
+              {/* <button onClick={handleLogout}>logout</button> */}
             </div>
             {suggestions.length > 0 && (
               <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[123px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">
