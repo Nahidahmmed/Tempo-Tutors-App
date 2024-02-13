@@ -1,19 +1,18 @@
-
 import "./Header.css";
 
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 
 import { FaMusic } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 export default function Header() {
-//     const { user, logOut } = useContext(AuthContext);
-//   const handleLogout = () => {
-//     logOut()
-//       .then(() => {})
-//       .catch((err) => console.log(err));
-//   };
+  //     const { user, logOut } = useContext(AuthContext);
+  //   const handleLogout = () => {
+  //     logOut()
+  //       .then(() => {})
+  //       .catch((err) => console.log(err));
+  //   };
   const [classes, setClasses] = useState([]);
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BASE_URL}/classes`)
@@ -53,7 +52,7 @@ export default function Header() {
       <Link className="Button" to="/dashboard/myCart">
         Dashboard
       </Link>
-    </li>
+    </li>,
   ];
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -80,25 +79,14 @@ export default function Header() {
       <div className="flex items-center justify-between pt-3">
         <div className="flex items-center space-x-4">
           <div className="group relative">
-            <button
-              onClick={toggleMenu}
-              className="lg:hidden focus:outline-none"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 mt-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </button>
+            <div className="lg:hidden">
+              <input type="checkbox" id="checkbox" onClick={toggleMenu} />
+              <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </label>
+            </div>
             {isMenuOpen && (
               <ul className="mt-[28px] z-10 p-2 shadow bg-black bg-opacity-80 rounded w-52 absolute">
                 {menuItems}
@@ -123,9 +111,8 @@ export default function Header() {
                 <button onClick={toggleSearch}>
                   <FaSearch className="w-9" />
                 </button>
-                
               </div>
-             
+
               <input
                 className="search_input w-[120px] lg:w-[185px]"
                 placeholder="search"
@@ -147,8 +134,6 @@ export default function Header() {
           </div>
         </div>
         {/* profile */}
-
-        
       </div>
     </div>
   );
