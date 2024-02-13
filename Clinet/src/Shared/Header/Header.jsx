@@ -1,18 +1,19 @@
 import "./Header.css";
 
-import { useEffect, useState } from "react";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext, useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import { FaMusic } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
+import { AuthContext } from "../../Providers/AuthProvider";
 export default function Header() {
-  //     const { user, logOut } = useContext(AuthContext);
-  //   const handleLogout = () => {
-  //     logOut()
-  //       .then(() => {})
-  //       .catch((err) => console.log(err));
-  //   };
+      const { logOut } = useContext(AuthContext);
+    const handleLogout = () => {
+      logOut()
+        .then(() => {})
+        .catch((err) => console.log(err));
+    };
   const [classes, setClasses] = useState([]);
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BASE_URL}/classes`)
@@ -121,6 +122,7 @@ export default function Header() {
                 value={searchTerm}
                 onChange={handleInputChange}
               />
+              <button onClick={handleLogout}>logout</button>
             </div>
             {suggestions.length > 0 && (
               <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[123px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">

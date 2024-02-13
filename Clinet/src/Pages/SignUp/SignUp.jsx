@@ -1,9 +1,49 @@
+import { useContext } from "react";
 import bgImage from "../../assets/music class image/131059.jpg";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 export default function SignUp() {
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+    const location = useLocation();
+  
+    const from = location.state?.from?.pathname || "/";
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      Swal.fire({
+        title: "Success!",
+        text: "You have signed up successfully.",
+        icon: "success",
+        confirmButtonText: "OK",
+        customClass: {
+          container: "my-swal-container",
+          popup: "my-swal-popup",
+          confirmButton: "my-swal-confirm-button",
+        },
+        showCloseButton: false,
+        buttonsStyling: false,
+        customClass: {
+          confirmButton: "my-swal-confirm-button",
+        },
+        width: "25rem",
+      }).then(() => {
+        navigate(from, { replace: true });
+      });
+    });
+  };
   return (
     <div className="relative ">
       <img className="w-full h-[880px] object-cover " src={bgImage} />
@@ -35,10 +75,9 @@ export default function SignUp() {
             </div>
           </div>
           <div className="flex-auto p-6">
-            <form role="form text-left">
+            <form role="form text-left" onSubmit={handleSignUp}>
               <div className="mb-4">
                 <input
-                 
                   name="name"
                   placeholder="Name"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white  bg-clip-padding py-2 px-3 font-normal placeholder:text-white  transition-all focus:border-gray-500 focus:bg-white bg-opacity-10 focus:placeholder:text-gray-700 focus:outline-none focus:transition-shadow"
@@ -47,7 +86,6 @@ export default function SignUp() {
               </div>
               <div className="mb-4">
                 <input
-                  
                   name="email"
                   placeholder="Email"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-opacity-10 bg-clip-padding py-2 px-3 font-normal placeholder:text-white transition-all focus:border-gray-500 focus:bg-white  focus:placeholder:text-gray-700 focus:outline-none focus:transition-shadow"
@@ -56,7 +94,6 @@ export default function SignUp() {
               </div>
               <div className="mb-4">
                 <input
-                  
                   name="password"
                   placeholder="Password"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-opacity-10 bg-clip-padding py-2 px-3 font-normal placeholder:text-white transition-all focus:border-gray-500 focus:bg-white  focus:placeholder:text-gray-700 focus:outline-none focus:transition-shadow "
@@ -65,7 +102,11 @@ export default function SignUp() {
               </div>
 
               <div className="text-center">
-              <input type="submit" className="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white" value="Sign up" />
+                <input
+                  type="submit"
+                  className="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+                  value="Sign up"
+                />
               </div>
               <Link
                 to="/login"
