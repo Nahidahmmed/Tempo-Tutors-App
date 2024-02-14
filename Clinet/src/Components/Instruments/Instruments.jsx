@@ -2,7 +2,7 @@
 
 export default function Instruments() {
   return (
-    <div className="grid lg:grid-cols-4 gap-5 w-full py-16 ">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 w-full py-16 ">
         {
             musicalInstruments.map(instrument => (
                 <div className="text-center w-48 mx-auto lg:mt-0 mt-10" key={instrument.index}>
