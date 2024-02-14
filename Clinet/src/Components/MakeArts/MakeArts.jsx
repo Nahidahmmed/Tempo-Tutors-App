@@ -13,7 +13,7 @@ export default function MakeArts() {
       >
         <div className="text-black text-center mt-32">
             <h1 className="font-serif text-6xl">Let's make art!</h1>
-            <p className="text-lg mt-6 lg:w-[30%] mx-auto">Explore several art forms as your child builds creativity and confidence in our new visual arts classes for ages 2-5!</p>
+            <p className="text-lg mt-6 lg:w-[30%] md:w-[80%] mx-auto">Explore several art forms as your child builds creativity and confidence in our new visual arts classes for ages 2-5!</p>
             <button class="button mt-5 rounded-full">SEE YOUR MUSIC CLASSES</button>
         </div>
         <div style={{ height: "140px" }} />
