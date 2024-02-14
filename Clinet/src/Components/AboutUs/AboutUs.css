@@ -3,7 +3,7 @@
   }
   
   .Card {
-    height: 380px;
+    height: 360px;
     border: 3px solid rgb(255, 255, 255);
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
@@ -103,4 +103,54 @@
     font-weight: 900;
     color: rgb(4, 193, 250);
   }
+
+  /* btn */
+
+  .UI-Button {
+    --color: #40A2D8;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   .UI-Button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   .UI-Button:hover {
+    color: #fff;
+   }
+   
+   .UI-Button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .UI-Button:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   .UI-Button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }
    

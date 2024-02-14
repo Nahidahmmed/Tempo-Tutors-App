@@ -5,7 +5,7 @@ import image from "../../assets/music class image/kelly-sikkema-jrFNMM6K0VI-unsp
 export default function Achievement() {
   return (
     <div>
-      <div className="my-[20%]">
+      <div className="my-[15%]">
         <Parallax blur={{ min: -25, max: 25 }} bgImage={image} strength={-200}>
           <div className="text-white text-center mt-20">
             <h1 className="font-serif text-6xl">Melody Music School</h1>
@@ -13,11 +13,11 @@ export default function Achievement() {
               We have talented and very experienced instructors who teach piano,
               violin, guitar, cello, and other instruments.
             </p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 pt-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 pt-16 lg: w-[80%] mx-auto">
               {infos.map((info) => (
                 <div key={info.index} className="mx-auto">
-                  <div className="border-white border-2 rounded-full p-3">
-                    <p className="bg-white bg-opacity-25 text-white text-4xl lg:text-7xl md:text-7xl lg:w-[180px] lg:h-[180px] md:w-[180px] md:h-[180px] w-[90px] h-[90px]  rounded-full lg:pt-14 md:pt-14 pt-6">
+                  <div className="border-white border-2 rounded-full p-3 mx-auto">
+                    <p className="bg-white bg-opacity-25 text-white text-4xl lg:text-7xl md:text-7xl lg:w-[150px] lg:h-[150px] md:w-[150px] md:h-[150px] w-[90px] h-[90px]  rounded-full lg:pt-10 md:pt-10 pt-6 mx-auto tracking-wider">
                       {info.number}
                     </p>
                   </div>
@@ -28,7 +28,7 @@ export default function Achievement() {
           </div>
           <div style={{ height: "80px" }} />
         </Parallax>
-        <div className="bg-[]">
+        <div className="bg-[#000000]">
 
         </div>
       </div>
@@ -46,8 +46,8 @@ const infos = [
     number: "14",
   },
   {
-    title: "Programmes",
-    number: "32",
+    title: "Events",
+    number: "27",
   },
   {
     title: "Awards",

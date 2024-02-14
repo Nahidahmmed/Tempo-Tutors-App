@@ -1,4 +1,4 @@
-.button {
+.uibutton {
     padding: 15px 2em;
     border: none;
     font-weight: bold;
@@ -13,14 +13,14 @@
     outline: 2px solid #FFC47E;
   }
   
-  button:hover {
+  .uibutton:hover {
     color: #faf67a;
     transform: scale(1.1);
     outline: 2px solid #faf67a;
     box-shadow: 4px 5px 17px -4px #268391;
   }
   
-  button::before {
+  .uibutton::before {
     content: "";
     position: absolute;
     left: -50px;
@@ -33,7 +33,7 @@
     transition: width 1000ms;
   }
   
-  button:hover::before {
+  .uibutton:hover::before {
     width: 250%;
   }
   

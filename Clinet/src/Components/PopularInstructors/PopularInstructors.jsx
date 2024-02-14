@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import InstructorCard from "../../ReusedComponents/InstructorCard/InstructorCard";
+import Title from "../../ReusedComponents/Title/Title";
 
 
 const PopularInstructors = () => {
@@ -14,9 +15,9 @@ const PopularInstructors = () => {
 
  
   return (
-    <div className="">
-      <h1 className="font-bold text-5xl my-12">Popular Instructors</h1>
-      <div className="grid md:grid-cols-3 gap-3">
+    <div className="my-[20%]">
+      <Title title={"Featured Teachers"} semititle={"Staffs"}></Title>
+      <div className="grid md:grid-cols-3 gap-10 my-20">
         {instructors.map((instructor) => (
           <InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>
         ))}

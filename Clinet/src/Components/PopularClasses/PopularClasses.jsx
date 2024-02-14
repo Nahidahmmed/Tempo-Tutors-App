@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ClassCard from "../../ReusedComponents/ClassCard/ClassCard";
+import Title from "../../ReusedComponents/Title/Title";
 
 export default function PopularClasses() {
   const [classes, setClasses] = useState([]);
@@ -16,21 +17,23 @@ export default function PopularClasses() {
 
   if (loading) {
     return (
-      <div class="loader mx-auto py-[35%]">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+      <div className="loader mx-auto py-[35%]">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
       </div>
     );
   }
 
   return (
-    <div className="lg:ml-[4%]">
-      <h1 className="font-bold text-5xl my-12">Popular Classes</h1>
-      <div className="grid md:grid-cols-3">
-        {classes.map((item) => (
-          <ClassCard key={item._id} item={item}></ClassCard>
-        ))}
+    <div className="">
+      <Title title={"Pouuler Classes"} semititle={"Class"}></Title>
+      <div className="mt-20">
+        <div className="grid md:grid-cols-3 gap-10">
+          {classes.map((item) => (
+            <ClassCard key={item._id} item={item}></ClassCard>
+          ))}
+        </div>
       </div>
     </div>
   );

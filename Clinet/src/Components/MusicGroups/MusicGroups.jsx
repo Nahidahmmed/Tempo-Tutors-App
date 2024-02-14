@@ -3,9 +3,9 @@ import Title from "../../ReusedComponents/Title/Title"
 
 export default function MusicGroups() {
   return (
-    <>
+    <div className="mt-[15%]">
     <Title title={"Music Groups"} semititle={"for"}></Title>
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-32">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 mb-60">
       {
         Groups.map(Group => (
           <div key={Group.index} className="text-center mt-16">
@@ -16,7 +16,7 @@ export default function MusicGroups() {
         ))
       }
     </div>
-    </>
+    </div>
   )
 }
 
