@@ -27,6 +27,7 @@ async function run() {
 
     const ClassesCollection = client.db("Tempo-Tutors").collection("Classes");
     const InstructorsCollection = client.db("Tempo-Tutors").collection("Instructors");
+    const cartsCollection = client.db("Tempo-Tutors").collection("Enrolled");
 
     // Get Methods
 
@@ -63,6 +64,33 @@ async function run() {
         const query = { _id: new ObjectId(id) };
         const result = await InstructorsCollection.findOne(query);
         res.send(result);
+    })
+
+    app.get('/carts',  async (req, res) => {
+      const email = req.query.email;
+      if (!email) {
+        return res.send([]);
+      }
+
+      const query = { email: email };
+      const result = await cartsCollection.find(query).toArray();
+      res.send(result);
+    })
+
+    // Post
+
+    app.post('/carts', async (req, res) => {
+      const item = req.body;
+      const result = await cartsCollection.insertOne(item);
+      res.send(result);
+    })
+
+    // delete
+    app.delete('/carts/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await cartsCollection.deleteOne(query);
+      res.send(result);
     })
 
     // Send a ping to confirm a successful connection

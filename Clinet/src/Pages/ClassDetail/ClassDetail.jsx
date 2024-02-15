@@ -1,7 +1,7 @@
-// import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
-// import { AuthContext } from "../../Providers/AuthProvider";
-// import Swal from "sweetalert2";
+import { useContext } from "react";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 function ClassDetail() {
   const classData = useLoaderData();
@@ -20,57 +20,57 @@ function ClassDetail() {
     class_materials,
     equipment_requirements,
   } = classData;
-//   const { user } = useContext(AuthContext);
-//   const navigate = useNavigate();
-//   const location = useLocation();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-//   const handleAddToCart = (item) => {
-//     console.log(item);
-//     if (user && user.email) {
-//       const addedClass = {
-//         addClassid: item._id,
-//         name: item.class_name,
-//         image: item.class_image,
-//         price: item.class_cost,
-//         instructor: item.instructor,
-//         duration: item.class_duration,
-//         time: item.schedule.time,
-//         email: user.email
-//       };
-//       fetch(`${import.meta.env.VITE_BASE_URL}/carts`, {
-//         method: "POST",
-//         headers: {
-//           "content-type": "application/json",
-//         },
-//         body: JSON.stringify(addedClass),
-//       })
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data.insertedId) {
-//             Swal.fire({
-//               position: "top-end",
-//               icon: "success",
-//               title: "class added successfully",
-//               showConfirmButton: false,
-//               timer: 1500,
-//             });
-//           }
-//         });
-//     } else {
-//       Swal.fire({
-//         title: "please login to select the class",
-//         icon: "warning",
-//         showCancelButton: true,
-//         confirmButtonColor: "#3085d6",
-//         cancelButtonColor: "#d33",
-//         confirmButtonText: "Login now!",
-//       }).then((result) => {
-//         if (result.isConfirmed) {
-//           navigate("/login", { state: { from: location } });
-//         }
-//       });
-//     }
-//   };
+  const handleAddToCart = (item) => {
+    console.log(item);
+    if (user && user.email) {
+      const addedClass = {
+        addClassid: item._id,
+        name: item.class_name,
+        image: item.class_image,
+        price: item.class_cost,
+        instructor: item.instructor,
+        duration: item.class_duration,
+        time: item.schedule.time,
+        email: user.email
+      };
+      fetch(`${import.meta.env.VITE_BASE_URL}/carts`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addedClass),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "class added successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else {
+      Swal.fire({
+        title: "please login to select the class",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login now!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden pt-[85px] ">
       <div className="lg:flex lg:flex-wrap">

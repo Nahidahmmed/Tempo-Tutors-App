@@ -50,8 +50,8 @@ export default function Header() {
       </Link>
     </li>,
     <li>
-      <Link className="Button" to="/dashboard/myCart">
-        Dashboard
+      <Link className="Button" to="/myClass">
+      My Classes
       </Link>
     </li>,
   ];

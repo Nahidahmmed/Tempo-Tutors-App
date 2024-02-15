@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./ClassCard.css"
+
 export default function ClassCard({ item }) {
+  
   return (
     <div className="max-w-sm mx-auto mb-8">
       <div className="bg-white rounded-lg overflow-hidden shadow-md mx-auto max-w-sm h-full flex flex-col transition duration-300 transform hover:scale-105">

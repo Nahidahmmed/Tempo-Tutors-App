@@ -11,6 +11,7 @@ import InstructorsDetail from "./Pages/InstructorsDetail/InstructorsDetail";
 import AuthProvider from "./Providers/AuthProvider";
 import SignUp from "./Pages/SignUp/SignUp";
 import Login from './Pages/Login/Login';
+import MyClass from './Pages/MyClass/MyClass';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/instructors",
         element: <InstructorsPage></InstructorsPage>,
+      },
+      {
+        path: "/myClass",
+        element: <MyClass></MyClass>,
       },
       {
         path: "/detail/:id",
