@@ -1,4 +1,3 @@
-import Instructor from '../../Components/Instructor'
 import Slider from '../../Components/Slider/Slider'
 import AboutUs from '../../Components/AboutUs/AboutUs'
 import MusicGroups from '../../Components/MusicGroups/MusicGroups'
@@ -14,17 +13,27 @@ import PopularInstructors from '../../Components/PopularInstructors/PopularInstr
 export default function Home() {
   return (
     <div>
-     <Slider></Slider>
-     <AboutUs/>
-     <MusicGroups/>
-     <MakeArts/>
-     <PopularClasses/>
-     <PopularInstructors/>
-     <Achievement/>
-     <Instruments/>
-      <News/>
-      <Reviews/>
-      <FeaturedStuff/>
+      <Slider />
+      <div className="max-w-screen-xl mx-auto">
+        <AboutUs />
+        <MusicGroups />
+      </div>
+      <MakeArts></MakeArts>
+      <div className="max-w-screen-xl mx-auto">
+        <Instruments />
+      </div>
+      <div className="max-w-screen-xl mx-auto">
+        <PopularClasses />
+      </div>
+      <Achievement />
+      <div className="max-w-screen-xl mx-auto">
+        <PopularInstructors />
+        <News />
+      </div>
+      <Reviews />
+      <div className="max-w-screen-xl mx-auto">
+        <FeaturedStuff />
+      </div>
     </div>
   )
 }

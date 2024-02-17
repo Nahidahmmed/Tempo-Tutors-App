@@ -34,9 +34,11 @@ export default function MyCart() {
             }
           })
     }
-    return (
-        <div>
-            <h1 className="mb-20 text-center mt-20 text-5xl font-bold">My Added <span className='text-[#CD1818]'>Music Classes</span></h1>
+
+    if(cart){
+        return(
+            <div>
+                <h1 className="mb-20 text-center mt-20 text-5xl font-bold">My Added <span className='text-[#CD1818]'>Music Classes</span></h1>
             <div className=''>
                 <div className="overflow-x-auto container mx-auto">
                     <table className="table text-lg mb-32">
@@ -89,6 +91,14 @@ export default function MyCart() {
                     </table>
                 </div>
             </div>
-        </div>
-    )
+            </div>
+        )
+    }else{
+        return (
+            <div>
+                
+            </div>
+        )
+    }
+    
 }
