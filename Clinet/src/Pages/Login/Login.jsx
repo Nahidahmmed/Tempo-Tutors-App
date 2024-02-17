@@ -1,111 +1,96 @@
-import { useContext } from "react";
-import bgImage from "../../assets/music class image/131059.jpg";
-import { FaGoogle } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
-import Swal from "sweetalert2";
+import React, { useContext } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
+import loginImage from '../../assets/login.jpg'
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
-  const { signIn } = useContext(AuthContext);
+    const { signIn,googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
 
-  const handleLogin = (event) => {
+  const handleGoogleSignIn = () =>{
+    googleSignIn()
+    .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser)
+        navigate(from, { replace: true });
+    })
+} 
+
+  const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
-    signIn(email, password).then((result) => {
-      const user = result.user;
-      console.log(user);
-      Swal.fire({
-        title: 'Welcome!',
-        text: 'User login successful.',
-        icon: 'success',
-        confirmButtonText: 'OK',
-        customClass: {
-          container: 'my-swal-container',
-          popup: 'my-swal-popup',
-          confirmButton: 'my-swal-confirm-button',
-        },
-        showCloseButton: false,
-        buttonsStyling: false, 
-        width: '25rem',
-      });
-      navigate(from, { replace: true });
-    });
-  };
-  return (
-    <div className="relative ">
-      <img className="w-full h-[880px] object-cover " src={bgImage} />
-      <div className="w-full px-3 mx-auto pt-44 md:flex-0 shrink-0 absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-40">
-        <div className="relative z-0 flex flex-col min-w-0 break-words bg-white bg-opacity-30  border-0 shadow-soft-xl rounded-2xl bg-clip-border lg:w-[40%] mx-auto">
-          <div className="p-6 mb-0 text-center bg-white bg-opacity-0 border-b-0 rounded-t-2xl">
-            <h5 className="text-4xl text-white font-semibold">Sign in with</h5>
-          </div>
-          <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
-            <div className="w-3/12 max-w-full px-1 ml-auto flex-0">
-              <a className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border border-white border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
-                <FaFacebook className="text-3xl" />
-              </a>
-            </div>
-            <div className="w-3/12 max-w-full px-1 flex-0">
-              <a className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border border-white border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
-                <FaApple className="text-3xl" />
-              </a>
-            </div>
-            <div className="w-3/12 max-w-full px-1 mr-auto flex-0">
-              <a className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75">
-                <FaGoogle className="text-3xl" />
-              </a>
-            </div>
-            <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
-              <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white bg-opacity-0 text-lg text-white ">
-                or
-              </p>
-            </div>
-          </div>
-          <div className="flex-auto p-6">
-            <form role="form text-left" onSubmit={handleLogin}>
-              <div className="mb-4">
-                <input
-                  name="email"
-                  placeholder="Email"
-                  className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-opacity-10 bg-clip-padding py-2 px-3 font-normal placeholder:text-white transition-all focus:border-gray-500 focus:bg-white  focus:placeholder:text-gray-700 focus:outline-none focus:transition-shadow"
-                  type="email"
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  name="password"
-                  placeholder="Password"
-                  className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-opacity-10 bg-clip-padding py-2 px-3 font-normal placeholder:text-white transition-all focus:border-gray-500 focus:bg-white  focus:placeholder:text-gray-700 focus:outline-none focus:transition-shadow "
-                  type="password"
-                />
-              </div>
+    signIn(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: 'User Login successful. ',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        });
+        navigate(from, { replace: true });
+      })
 
-              <div className="text-center">
-                <input
-                  type="submit"
-                  className="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
-                  value="Sign up"
+  }
+  return (
+    <div>
+        <div className="flex h-screen">
+            {/* Image Section */}
+            <div className="w-[500px] items-center my-auto ml-auto h-[600px]">
+                <img
+                    src={loginImage}
+                    alt="Login Image"
+                    className="object-cover h-full w-full"
                 />
-              </div>
-              <Link
-                to="/signUp"
-                className="pt-8 mb-0 leading-normal text-sm text-white"
-              >
-                New Here ? <a className="font-bold">Sign in</a>
-              </Link>
-            </form>
-          </div>
+            </div>
+
+            {/* Login Form Section */}
+            <div className="w-1/2 flex  items-center justify-center ">
+                <div className="p-8 w-[400px] h-[400px] bg-white rounded-lg shadow-lg border-2 border-[#C147E9]">
+                    <h2 className="text-3xl text-center font-semibold mb-6">Login</h2>
+                    <form onSubmit={handleLogin}>
+                        <div className="mb-6">
+
+                            <input
+                                type="email"
+                                id="username"
+                                name="email"
+                                className="bg-gray-100 border-2 border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-sky-500 transition duration-300 hover:border-sky-400"
+                                placeholder="Your username"
+                                required
+                            />
+                        </div>
+                        <div className="mb-6">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                className="bg-gray-100 border-2 border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:border-sky-500 transition duration-300 hover:border-sky-400"
+                                placeholder="Your password"
+                                required
+                            />
+                        </div>
+                        
+                        <input type="submit" value="login"   className="bg-[#C147E9] hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 focus:outline-none focus:bg-sky-600 mb-4 w-full" />
+                    </form>
+
+                    <button  onClick={handleGoogleSignIn} className="block font-bold text-5xl bg-[#C147E9] text-white my-2 mx-auto w-[55px] rounded-full text-center pb-1 pr-1">G</button>
+                    <span className="text-[#5C3D1E] font-semibold">Already have a account? <Link to={"/register"} className="ml-2 underline">Register here</Link> </span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  );
+  )
 }

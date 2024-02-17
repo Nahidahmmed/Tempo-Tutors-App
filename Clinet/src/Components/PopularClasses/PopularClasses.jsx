@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import Title from "../../ReusedComponents/Title";
 import ClassCard from "../../ReusedComponents/ClassCard/ClassCard";
-import Title from "../../ReusedComponents/Title/Title";
+
 
 export default function PopularClasses() {
   const [classes, setClasses] = useState([]);

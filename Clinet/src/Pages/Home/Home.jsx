@@ -1,39 +1,30 @@
-import AboutUs from "../../Components/AboutUs/AboutUs";
-import Achievement from "../../Components/Achievement/Achievement";
-import FeaturedStuff from "../../Components/FeaturedStuff/FeaturedStuff";
-import Instruments from "../../Components/Instruments/Instruments";
-import MakeArts from "../../Components/MakeArts/MakeArts";
-import MusicGroups from "../../Components/MusicGroups/MusicGroups";
-import News from "../../Components/News/News";
-import PopularClasses from "../../Components/PopularClasses/PopularClasses";
-import PopularInstructors from "../../Components/PopularInstructors/PopularInstructors";
-import Reviews from "../../Components/Reviews/Reviews";
-import Slider from "../../Components/Slider/Slider";
+import Instructor from '../../Components/Instructor'
+import Slider from '../../Components/Slider/Slider'
+import AboutUs from '../../Components/AboutUs/AboutUs'
+import MusicGroups from '../../Components/MusicGroups/MusicGroups'
+import MakeArts from '../../Components/MakeArts/MakeArts'
+import Achievement from '../../Components/Achievement/Achievement'
+import News from '../../Components/News/News'
+import Reviews from '../../Components/Reviews/Reviews'
+import FeaturedStuff from '../../Components/FeaturedStuff/FeaturedStuff'
+import Instruments from '../../Components/Instruments/Instruments'
+import PopularClasses from '../../Components/PopularClasses/PopularClasses'
+import PopularInstructors from '../../Components/PopularInstructors/PopularInstructors'
 
 export default function Home() {
   return (
     <div>
-      <Slider />
-      <div className="max-w-screen-xl mx-auto">
-        <AboutUs />
-        <MusicGroups />
-      </div>
-      <MakeArts></MakeArts>
-      <div className="max-w-screen-xl mx-auto">
-        <Instruments />
-      </div>
-      <div className="max-w-screen-xl mx-auto">
-        <PopularClasses />
-      </div>
-      <Achievement />
-      <div className="max-w-screen-xl mx-auto">
-        <PopularInstructors />
-        <News />
-      </div>
-      <Reviews />
-      <div className="max-w-screen-xl mx-auto">
-        <FeaturedStuff />
-      </div>
+     <Slider></Slider>
+     <AboutUs/>
+     <MusicGroups/>
+     <MakeArts/>
+     <PopularClasses/>
+     <PopularInstructors/>
+     <Achievement/>
+     <Instruments/>
+      <News/>
+      <Reviews/>
+      <FeaturedStuff/>
     </div>
-  );
+  )
 }

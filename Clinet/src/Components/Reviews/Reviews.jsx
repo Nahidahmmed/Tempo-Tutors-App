@@ -1,8 +1,5 @@
 import { Parallax } from "react-parallax";
-import { useEffect, useState } from "react";
 import image from "../../assets/music class image/music_image.jpg";
-import { FaAngleRight } from "react-icons/fa";
-import { FaAngleLeft } from "react-icons/fa";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 export default function Reviews() {
@@ -20,7 +17,7 @@ export default function Reviews() {
         function nextTimeout() {
           clearTimeout(timeout);
           if (mouseOver) return;
-          timeout = setTimeout(() => {
+          timeout = setTimeout(() => {s
             slider.next();
           }, 2000);
         }

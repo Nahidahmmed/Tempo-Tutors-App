@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+
+
 
 function ClassDetail() {
   const classData = useLoaderData();
@@ -20,6 +22,7 @@ function ClassDetail() {
     class_materials,
     equipment_requirements,
   } = classData;
+  console.log(classData)
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -37,7 +40,7 @@ function ClassDetail() {
         time: item.schedule.time,
         email: user.email
       };
-      fetch(`${import.meta.env.VITE_BASE_URL}/carts`, {
+      fetch(`${import.meta.env.VITE_BASE_URL}/addedClass`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

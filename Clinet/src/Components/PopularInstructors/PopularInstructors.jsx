@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import InstructorCard from "../../ReusedComponents/InstructorCard/InstructorCard";
-import Title from "../../ReusedComponents/Title/Title";
+import InstructorCard from "../../ReusedComponents/InsTructorCard/InsTructorCard";
+import Title from "../../ReusedComponents/Title";
 
 
 const PopularInstructors = () => {

@@ -1,6 +1,5 @@
-import Title from "../../ReusedComponents/Title/Title";
-
 import { FaInstagram,FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import Title from "../../ReusedComponents/Title";
 
 export default function FeaturedStuff() {
   return (

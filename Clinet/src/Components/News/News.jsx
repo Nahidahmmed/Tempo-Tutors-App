@@ -1,4 +1,5 @@
-import Title from "../../ReusedComponents/Title/Title";
+import Title from "../../ReusedComponents/Title";
+
 
 export default function News() {
   return (
