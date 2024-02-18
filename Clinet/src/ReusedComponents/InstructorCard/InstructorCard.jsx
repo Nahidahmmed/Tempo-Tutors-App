@@ -14,8 +14,8 @@ const InstructorCard = ({ instructor }) => {
 
   return (
     <div className="profile-card w-[350px] mx-auto rounded-md  shadow-xl overflow-hidden  relative cursor-pointer snap-start shrink-0 bg-white flex flex-col items-center  gap-3 group transition duration-300 transform hover:scale-105">
-      <div className="avatar pt-5 flex items-center justify-center flex-col w-[200px] h-[220px] overflow-hidden">
-        <img src={image} className="rounded-full " alt="" />
+      <div className="avatar pt-5 flex items-center justify-center flex-col  overflow-hidden  p-5">
+        <img src={image} className="rounded-full w-[200px] h-[200px]" alt="" />
       </div>
       <div className="headings w-full pl-10">
         <p className="text-xl font-serif font-semibold text-[#434955]">

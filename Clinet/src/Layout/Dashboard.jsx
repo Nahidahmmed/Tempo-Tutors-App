@@ -8,7 +8,7 @@ export default function Dashboard() {
       <Header />
       <div className="flex flex-1 pt-36">
         {/* Sidebar */}
-        <div className="hidden lg:block w-80 bg-black">
+        <div className="hidden lg:block w-80 bg-gray-900">
           <ul className="menu p-4 w-full min-h-full font-semibold text-lg text-white">
             <li>
               <Link to={"/dashboard/users"} className="block py-2 px-4 hover:text-red-600">Manage Users</Link>
