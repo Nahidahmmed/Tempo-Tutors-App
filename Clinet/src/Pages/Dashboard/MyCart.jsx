@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import UseCarts from '../../Hooks/UseCarts'
 import Swal from 'sweetalert2'
+import Title from '../../ReusedComponents/Title'
 export default function MyCart() {
     const [cart,refetch] = UseCarts()
     console.log(cart)
@@ -38,7 +39,7 @@ export default function MyCart() {
     if(cart){
         return(
             <div>
-                <h1 className="mb-20 text-center mt-20 text-5xl font-bold">My Added <span className='text-[#CD1818]'>Music Classes</span></h1>
+                <Title title={"Enroled music classes"} semititle={""}></Title>
             <div className=''>
                 <div className="overflow-x-auto container mx-auto">
                     <table className="table text-lg mb-32">
