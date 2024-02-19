@@ -26,10 +26,20 @@ export default function Header() {
         </Link>
       </li>
       <li>
-        <Link className="Button" to="/dashboard/mycart">
-          Dashboard
-        </Link>
-      </li>
+      <Link className="Button" to="/mycart">
+        Enroled Class
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/users">
+        Users
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/addclass">
+        Add Class
+      </Link>
+    </li>
       <li>
         <Link className="Button" to="/about">
           About Us

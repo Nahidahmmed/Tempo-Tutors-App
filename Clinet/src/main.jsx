@@ -16,8 +16,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import Dashboard from './Layout/Dashboard';
-import MyCart from './Pages/Dashboard/MyCart/MyCart';
+import MyCart from './Pages/MyCart/MyCart';
 import AllUsers from './Pages/AllUsers/AllUsers';
 
 import AddClasses from './Pages/AddClasses/AddClasses';
@@ -59,6 +58,18 @@ const router = createBrowserRouter([
         element: <AllInstructors></AllInstructors>
       },
       {
+        path: '/mycart',
+        element: <MyCart></MyCart>
+      },
+      {
+        path: '/users',
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: '/addclass',
+        element: <AddClasses></AddClasses>
+      },
+      {
         path: "/detail/:id",
         element: <ClassDetail></ClassDetail>,
         loader: ({ params }) =>
@@ -72,24 +83,6 @@ const router = createBrowserRouter([
       },
     ]
   },
-  {
-    path: '/dashboard',
-    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-    children: [
-      {
-        path: 'mycart',
-        element: <MyCart></MyCart>
-      },
-      {
-        path: 'users',
-        element: <AllUsers></AllUsers>
-      },
-      {
-        path: 'addclass',
-        element: <AddClasses></AddClasses>
-      },
-    ]
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
