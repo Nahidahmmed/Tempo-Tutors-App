@@ -89,20 +89,20 @@ async function run() {
       res.send(result);
     })
 
-    app.get('/users/admin/:email', async (req, res) => {
-      const email = req.params.email;
-      const query = { email: email }
-      const user = await usersCollection.findOne(query);
-      const result = { admin: user?.role === 'admin' }
-      res.send(result);
-    })
-    app.get('/users/instructor/:email', async (req, res) => {
-      const email = req.params.email;
-      const query = { email: email }
-      const user = await usersCollection.findOne(query);
-      const result = { instructor: user?.role === 'instructor' }
-      res.send(result);
-    })
+    // app.get('/users/admin/:email', async (req, res) => {
+    //   const email = req.params.email;
+    //   const query = { email: email }
+    //   const user = await usersCollection.findOne(query);
+    //   const result = { admin: user?.role === 'admin' }
+    //   res.send(result);
+    // })
+    // app.get('/users/instructor/:email', async (req, res) => {
+    //   const email = req.params.email;
+    //   const query = { email: email }
+    //   const user = await usersCollection.findOne(query);
+    //   const result = { instructor: user?.role === 'instructor' }
+    //   res.send(result);
+    // })
     // cart collection
     app.get('/addedClass', async (req, res) => {
       const email = req.query.email;

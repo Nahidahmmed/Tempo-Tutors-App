@@ -17,7 +17,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Dashboard from './Layout/Dashboard';
-import MyCart from './Pages/Dashboard/MyCart';
+import MyCart from './Pages/Dashboard/MyCart/MyCart';
 import AllUsers from './Pages/AllUsers/AllUsers';
 
 import AddClasses from './Pages/AddClasses/AddClasses';

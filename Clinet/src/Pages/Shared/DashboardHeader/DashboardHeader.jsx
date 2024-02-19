@@ -2,51 +2,49 @@ import { useEffect, useState } from "react";
 import { FaMusic, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 export default function DashboardHeader() {
+  const [classes, setClasses] = useState([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BASE_URL}/classes`)
+      .then((res) => res.json())
+      .then((data) => {
+        setClasses(data);
+      });
+  }, []);
 
-      const [classes, setClasses] = useState([]);
-      useEffect(() => {
-        fetch(`${import.meta.env.VITE_BASE_URL}/classes`)
-          .then((res) => res.json())
-          .then((data) => {
-            setClasses(data);
-          });
-      }, []);
-    
-      const [isMenuOpen, setIsMenuOpen] = useState(false);
-      const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-      };
-      const [isSearchVisible, setSearchVisible] = useState(false);
-    
-      const toggleSearch = () => {
-        setSearchVisible(!isSearchVisible);
-      };
-    
-      const [searchTerm, setSearchTerm] = useState("");
-      const [suggestions, setSuggestions] = useState([]);
-    
-      const handleInputChange = (e) => {
-        const inputText = e.target.value;
-        setSearchTerm(inputText);
-        const filteredSuggestions =
-          inputText !== ""
-            ? classes.filter((Class) =>
-                Class.class_name.toLowerCase().startsWith(inputText.toLowerCase())
-              )
-            : [];
-    
-        setSuggestions(filteredSuggestions);
-      };
-    
-      const handleSuggestionClick = (selectedCountry) => {
-        setSearchTerm(selectedCountry.class_name);
-        setSuggestions([]);
-      };
-    
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const [isSearchVisible, setSearchVisible] = useState(false);
+
+  const toggleSearch = () => {
+    setSearchVisible(!isSearchVisible);
+  };
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const handleInputChange = (e) => {
+    const inputText = e.target.value;
+    setSearchTerm(inputText);
+    const filteredSuggestions =
+      inputText !== ""
+        ? classes.filter((Class) =>
+            Class.class_name.toLowerCase().startsWith(inputText.toLowerCase())
+          )
+        : [];
+
+    setSuggestions(filteredSuggestions);
+  };
+
+  const handleSuggestionClick = (selectedCountry) => {
+    setSearchTerm(selectedCountry.class_name);
+    setSuggestions([]);
+  };
+
   return (
-    <div className="fixed z-50 w-full bg-black bg-opacity-60 lg:h-[85px] text-white p-4">
+    <div className="fixed z-50 w-full bg-[#272829] lg:h-[85px] text-white p-4">
       <div className="flex items-center justify-between pt-3">
         <div className="flex items-center space-x-4">
           <div className="group relative">
@@ -95,7 +93,7 @@ export default function DashboardHeader() {
               {/* <button onClick={handleLogout}>logout</button> */}
             </div>
             {suggestions.length > 0 && (
-              <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[123px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">
+              <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[1px] text-sm mr-10 p-3 shadow bg-[#272829] rounded-b-xl absolute">
                 {suggestions.slice(0, 8).map((Class, index) => (
                   <li key={index} onClick={() => handleSuggestionClick(Class)}>
                     <button className="pb-2">{Class.class_name}</button>
@@ -108,35 +106,40 @@ export default function DashboardHeader() {
         {/* profile */}
       </div>
     </div>
-  )
+  );
 }
 
 const menuItems = (
-    <>
-      <li>
-        <Link className="Button" to="/">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link className="Button" to="/classes">
-          Classes
-        </Link>
-      </li>
-      <li>
-        <Link className="Button" to="/instructors">
-          Instructors
-        </Link>
-      </li>
-      <li>
-        <Link className="Button" to="/dashboard/mycart">
-          Dashboard
-        </Link>
-      </li>
-      <li>
-        <Link className="Button" to="/about">
-          About Us
-        </Link>
-      </li>
-    </>
-  );
+  <>
+    <li>
+      <Link className="Button" to="/">
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/classes">
+        Classes
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/dashboard/mycart">
+        Enroled Class
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/dashboard/users">
+        Users
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/dashboard/addclass">
+        Add Class
+      </Link>
+    </li>
+    <li>
+      <Link className="Button" to="/about">
+        About Us
+      </Link>
+    </li>
+  </>
+);
