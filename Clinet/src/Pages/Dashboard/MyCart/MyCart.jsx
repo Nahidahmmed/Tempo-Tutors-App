@@ -36,7 +36,7 @@ export default function MyCart() {
     return (
       <div>
         <Title title={"Enroled music classes"} semititle={""}></Title>
-        <div className="mt-10">
+        <div className="mt-10 w-full">
           <div className="overflow-x-auto container mx-auto">
             <table className="table text-lg mb-32">
               {/* head */}
@@ -59,11 +59,12 @@ export default function MyCart() {
                     </th>
                     <td>
                       <div className="flex items-center space-x-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle w-16 h-16">
+                        <div className="">
+                          <div className=" w-16 h-16">
                             <img
+                            className="rounded-full"
                               src={classes.image}
-                              alt="Avatar Tailwind CSS Component"
+                              alt=""
                             />
                           </div>
                         </div>
@@ -112,13 +113,13 @@ export default function MyCart() {
   } else {
     return (
       <div className="w-full">
-        <div className="pt-52 w-[30%] mx-auto">
-          <div className="tooltip-container">
+        <div className="pt-28 lg:pt-52 lg:w-[30%] mx-auto">
+          <div className="tooltip-container w-full lg:w-[600px] md:w-[600px] mx-auto">
             <span className="tooltip">
               You don't have a Enroled class ,If you want to Enroled a class
               please go to "classes"
             </span>
-            <span className="text">@</span>
+            <span className="text text-white">@</span>
           </div>
         </div>
       </div>

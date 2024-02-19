@@ -113,19 +113,18 @@
 
   /* Tool tip */
 
-  /* This is an example, feel free to delete this code */
+ 
   .tooltip-container {
     height: 270px;
-    width: 610px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #272829;
     background-image: linear-gradient(
       to left bottom,
-      #f2f5f8,
-      #ecf1f2,
-      #e7eceb,
-      #e3e7e4,
-      #e1e2de
+      #000000,
+      #292929,
+      #272829,
+      #333333,
+      #272829
     );
     border: 1px solid white;
     display: flex;
@@ -141,19 +140,19 @@
   .tooltip-container::before {
     position: absolute;
     content: "";
-    top: -50%;
+    top: -52%;
     clip-path: polygon(50% 0, 0 100%, 100% 100%);
     border-radius: 5px;
     background-color: fff;
     background-image: linear-gradient(
       to left bottom,
-      #1288ff,
-      #e4eaec,
-      #d8dfde,
-      #cdd3cf,
-      #c5c7c1
+      #000000,
+      #3a3a3a,
+      #666666,
+      #999999,
+      #cccccc
     );
-    width: 100%;
+    width: 97%;
     height: 50%;
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateX(-150deg) translateY(-110%);
@@ -162,7 +161,7 @@
   }
   
   .tooltip-container .text {
-    color: rgb(32, 30, 30);
+    color: white;
     font-weight: bold;
     font-size: 40px;
   }
