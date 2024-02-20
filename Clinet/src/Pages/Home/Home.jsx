@@ -10,6 +10,7 @@ import Instruments from '../../Components/Instruments/Instruments'
 import PopularClasses from '../../Components/PopularClasses/PopularClasses'
 import PopularInstructors from '../../Components/PopularInstructors/PopularInstructors'
 import Offers from '../../Components/Offers/Offers'
+import ContactUs from '../../Components/ContactUs/ContactUs'
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
       </div>
       <div className="max-w-screen-xl mx-auto">
         <Offers/>
+        <ContactUs/>
       </div>
     </div>
   )
