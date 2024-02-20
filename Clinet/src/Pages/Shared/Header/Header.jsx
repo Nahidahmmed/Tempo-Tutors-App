@@ -17,7 +17,7 @@ export default function Header() {
       </li>
       <li>
         <Link className="Button" to="/classes">
-          Classes
+          Class
         </Link>
       </li>
       <li>
@@ -30,11 +30,11 @@ export default function Header() {
         Enroled Class
       </Link>
     </li>
-    <li>
+    {/* <li>
       <Link className="Button" to="/users">
         Users
       </Link>
-    </li>
+    </li> */}
     {/* <li>
       <Link className="Button" to="/addclass">
         Add Class
