@@ -33,6 +33,7 @@ const AllInstructors = () => {
           "Welcome to our instructor showcase, where expertise meets passion. Get to know the brilliant minds behind our courses, each a master in their field. "
         }
         image={BannerImage}
+        route={"Instructors"}
       ></Banner>
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-24 max-w-screen-xl mx-auto">
         {instructors.map((instructor) => (

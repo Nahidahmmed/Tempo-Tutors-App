@@ -28,7 +28,7 @@ export default function PopularClasses() {
 
   return (
     <div className="">
-      <Title title={"Pouuler Classes"} semititle={"Class"}></Title>
+      <Title title={"Popular Classes"} semititle={"Class"}></Title>
       <div className="mt-20">
         <div className="grid md:grid-cols-3 gap-10">
           {classes.map((item) => (
