@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import Title from '../../ReusedComponents/Title';
 
 export default function AddClasses() {
     const { user } = useContext(AuthContext);
@@ -48,8 +49,8 @@ export default function AddClasses() {
 
     return (
         <div>
-            <div className="w-[70%] h-[80%] mx-auto mt-8">
-                <h2 className="text-5xl font-bold text-center py-7 text-white mb-6">Add a Toy</h2>
+            <div className="w-[70%] h-[80%] mx-auto pt-36">
+                <Title title={"You can add class here"}></Title>
                 <form onSubmit={handleSubmit} className="bg-[#000000] my-8 rounded-lg shadow-lg p-6">
                     <div className="flex">
                         <div className="mb-6  mr-5 w-1/2">
@@ -161,6 +162,7 @@ export default function AddClasses() {
                     </div>
                 </form>
             </div>
+            
         </div>
     )
 }

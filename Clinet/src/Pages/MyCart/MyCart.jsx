@@ -33,7 +33,7 @@ export default function MyCart() {
 
   if (cart[0]?._id) {
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto py-40 ">
         <h1 className="text-3xl font-bold mb-6">Enrolled Music Classes</h1>
         <div className="overflow-x-auto">
           <table className="min-w-full">
