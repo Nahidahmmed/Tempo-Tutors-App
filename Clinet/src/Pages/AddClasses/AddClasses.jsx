@@ -16,7 +16,7 @@ export default function AddClasses() {
         const price = form.price.value;
         const availableSeats = form.availableSeats.value;
 
-        const data = { Name: name,Image: image, InstructorName: instructorName,InstructorEmail:instructorEmail ,Price: price, AvailableSeats: availableSeats,Description: discription, }
+        const data = { Name: name,Image: image, Instructor: {instructor_name: name}, InstructorName: instructorName,InstructorEmail:instructorEmail ,Price: price, AvailableSeats: availableSeats,Description: discription, }
         console.log(data);
 
 

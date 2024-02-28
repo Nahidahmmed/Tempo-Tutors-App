@@ -25,6 +25,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import ClassDetail from './Pages/ClassDetail/ClassDetail';
 import InstructorsDetail from './Pages/InstructorsDetail/InstructorsDetail';
 import AllInstructors from './Pages/AllInstructors/AllInstructors';
+
 const queryClient = new QueryClient()
 
 
@@ -82,7 +83,7 @@ const router = createBrowserRouter([
           fetch(`${import.meta.env.VITE_BASE_URL}/instructors/${params.id}`),
       },
     ]
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

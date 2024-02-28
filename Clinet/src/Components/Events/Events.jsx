@@ -1,13 +1,15 @@
 import { FaArrowUp, FaClock, FaMap } from "react-icons/fa";
+import Title from "../../ReusedComponents/Title";
 
 export default function Events() {
   return (
-    <div>
-      <div className="mx-5">
+    <div className="mt-[10%]">
+      <Title title={"Upcoming Event"} semititle={"EVENTS"}></Title>
+      <div className="mx-5 mt-28">
         {Eventinfos.map((event, index) => (
           <div
             key={index}
-            className="w-full grid lg:grid-cols-6 text-white bg-[#272829] my-5 py-3 rounded-md  p-5 xl:p-0 lg:p-0 md:p-0 "
+            className="w-full grid lg:grid-cols-6 text-white bg-[#272829] my-5 py-3 rounded-md xl:p-2 lg:p-2 md:p-2 p-5"
           >
             <div className="lg:col-span-1">
               <p className="text-6xl p-5 mt-3">{event.date}</p>

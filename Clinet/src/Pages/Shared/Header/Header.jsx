@@ -1,13 +1,12 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FaMusic, FaSearch } from "react-icons/fa";
-import "./Header.css"
+import "./Header.css";
 
 export default function Header() {
-//   const { user, logOut } = useContext(AuthContext);
+  //   const { user, logOut } = useContext(AuthContext);
 
-  
   const menuItems = (
     <>
       <li>
@@ -26,20 +25,15 @@ export default function Header() {
         </Link>
       </li>
       <li>
-      <Link className="Button" to="/mycart">
-        Enroled Class
-      </Link>
-    </li>
-    {/* <li>
-      <Link className="Button" to="/users">
-        Users
-      </Link>
-    </li> */}
-    {/* <li>
-      <Link className="Button" to="/addclass">
-        Add Class
-      </Link>
-    </li> */}
+        <Link className="Button" to="/mycart">
+          Enroled Class
+        </Link>
+      </li>
+      <li>
+        <Link className="Button" to="/addclass">
+          Add Class
+        </Link>
+      </li>
       <li>
         <Link className="Button" to="/about">
           About Us
@@ -114,7 +108,7 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:flex">
-          <ul className="flex gap-6">{menuItems}</ul>
+          <ul className="flex gap-6 md:gap-2 lg:gap-0 xl:gap-4">{menuItems}</ul>
         </div>
 
         <div className="text-xl lg:pr-2 flex items-center">
