@@ -3,7 +3,7 @@ import "./Offers.css";
 import Title from "../../ReusedComponents/Title";
 export default function Offers() {
   return (
-    <div className="mb-[10%]">
+    <div className="mb-[20%]">
         <Title title={"Grade Programs"} semititle={"for class"}/>
       <div className="grid lg:grid-cols-3 md:grid-cols-3 mx-auto mt-20">
         <div className="card group mx-auto">

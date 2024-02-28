@@ -4,7 +4,7 @@ import "./AboutUs.css"
 export default function AboutUs() {
   return (
     <div className="lg:flex container w-full mx-auto bg-white mt-[20%]">
-       <div className="lg:w-[55%] lg:pr-9 mt-16">
+       <div className="lg:w-[55%] lg:pr-9 mt-16 m-5">
       <h2 className="text-xl font-normal text-blue-500 italic">About the Music School</h2>
       <h2 className="text-5xl mt-4 font-medium text-gray-700 font-serif">Providing Service Since 2008</h2>
       <p className="mt-6 text-base font-light ">

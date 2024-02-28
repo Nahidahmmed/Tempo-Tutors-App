@@ -39,7 +39,7 @@ export default function Register() {
     event.preventDefault();
     const form = event.target;
     const username = form.username.value;
-    
+
     const email = form.email.value;
     const password = form.password.value;
     createUser(email, password).then((result) => {
@@ -78,7 +78,7 @@ export default function Register() {
     <div className="relative">
       <img className="w-full h-[880px] object-cover " src={bgImage} />
       <div className="w-full px-3 mx-auto pt-44 md:flex-0 shrink-0 absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-40">
-        <div className="relative w-full md:w-[50%] lg:w-[40%] mx-auto z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+        <div className="relative w-full md:w-[45%] lg:w-[30%] xl:w-[30%] mx-auto z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
           <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
             <h5 className="text-2xl">Sign in With</h5>
           </div>
@@ -265,7 +265,7 @@ export default function Register() {
                 to="/signUp"
                 className="pt-8 mb-0 leading-normal text-sm text-white"
               >
-                New Here ? <a className="font-bold">Sign up</a>
+                already have an account ? <a className="font-bold">Sign up</a>
               </Link>
             </form>
           </div>

@@ -11,6 +11,7 @@ import PopularClasses from '../../Components/PopularClasses/PopularClasses'
 import PopularInstructors from '../../Components/PopularInstructors/PopularInstructors'
 import Offers from '../../Components/Offers/Offers'
 import ContactUs from '../../Components/ContactUs/ContactUs'
+import Events from '../../Components/Events/Events'
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <div className="max-w-screen-xl mx-auto">
         <PopularInstructors />
         <News />
+        <Events/>
       </div>
       <Reviews />
       <div className="max-w-screen-xl mx-auto">
