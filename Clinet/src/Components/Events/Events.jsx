@@ -9,7 +9,7 @@ export default function Events() {
         {Eventinfos.map((event, index) => (
           <div
             key={index}
-            className="w-full grid lg:grid-cols-6 text-white bg-[#272829] my-5 py-3 rounded-md xl:p-2 lg:p-2 md:p-2 p-5"
+            className="w-full grid lg:grid-cols-6 text-white bg-black my-5 py-3 rounded-md xl:p-2 lg:p-2 md:p-2 p-5"
           >
             <div className="lg:col-span-1">
               <p className="text-6xl p-5 mt-3">{event.date}</p>

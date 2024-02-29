@@ -5,18 +5,18 @@ import { FaPhone } from "react-icons/fa";
 export default function ContactUs() {
   return (
     <div className="w-full text-white bg-[#040D16] rounded-md my-[10%]">
-      <div className="flex">
-        <div className="w-1/2 p-10 pt-10">
+      <div className="lg:flex xl:flex md:flex">
+        <div className="xl:w-1/2 lg:w-1/2 p-10 pt-10">
           <h1 className="text-xl text-blue-500">CONTACT US</h1>
-          <p className="text-6xl pt-4">Get Closer With Us</p>
+          <p className="xl:text-6xl lg:text-6xl md:text-6xl text-5xl pt-4">Get Closer With Us</p>
           <p className="text-base pt-5">Feel free to reach out to us with any questions, inquiries, or feedback. We're here to assist you and provide the information you need. Your input is valuable to us, and we look forward to hearing from you!</p>
-          <ul className="text-lg pt-8">
-            <li className="flex items-center pb-2"><FaMap className="mr-4"/>2nd Ronggowarsito Street, pekanbaru, riau, 28290</li>
-            <li className="flex items-center pb-2"><FaRegEnvelopeOpen className="mr-4"/>nahidahmmed411@gmail.com</li>
-            <li className="flex items-center"><FaPhone className="mr-4"/>(+088) 01533175945</li>
+          <ul className="xl:text-lg lg:text-lg md:text-lg text-sm pt-8">
+            <li className="flex items-center pb-2"><FaMap className="xl:mr-4 lg:mr-4 md:mr-4 mr-2 xl:text-lg lg:text-xl md:text-xl text-xl"/>2nd Ronggowarsito Street, pekanbaru, riau, 28290</li>
+            <li className="flex items-center pb-2 "><FaRegEnvelopeOpen className="xl:mr-4 lg:mr-4 md:mr-4 mr-2 xl:text-lg lg:text-xl md:text-xl text-xl"/>nahidahmmed411@gmail.com</li>
+            <li className="flex items-center"><FaPhone className="xl:mr-4 lg:mr-4 md:mr-4 mr-2 xl:text-lg lg:text-xl md:text-xl text-xl"/>(+088) 01533175945</li>
           </ul>
         </div>
-        <div className="w-1/2">
+        <div className="xl:w-1/2 lg:w-1/2">
           <form className="py-10 p-10">
             
             <div className="mb-4">

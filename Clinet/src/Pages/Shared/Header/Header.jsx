@@ -29,11 +29,11 @@ export default function Header() {
           Enroled Class
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link className="Button" to="/addclass">
           Add Class
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link className="Button" to="/about">
           About Us
