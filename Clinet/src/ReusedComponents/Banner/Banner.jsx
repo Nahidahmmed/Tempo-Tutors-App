@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Banner({image,tittle,text,route}) {
   return (
-    <div className="relative pt-[85px]">
+    <div className="relative">
         <img className="w-full h-[480px] object-cover" src={image} />
         <div className="absolute text-center top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-30 p-4">
           <Link

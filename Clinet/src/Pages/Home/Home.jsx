@@ -1,5 +1,5 @@
 import Slider from '../../Components/Slider/Slider'
-import AboutUs from '../../Components/AboutUs/AboutUs'
+import AboutUs from '../../Components/AboutUs/About'
 import MusicGroups from '../../Components/MusicGroups/MusicGroups'
 import MakeArts from '../../Components/MakeArts/MakeArts'
 import Achievement from '../../Components/Achievement/Achievement'

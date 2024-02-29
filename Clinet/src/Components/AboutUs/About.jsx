@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
-import "./AboutUs.css"
+import "./About.css"
 
-export default function AboutUs() {
+export default function About() {
   return (
-    <div className="lg:flex container w-full mx-auto bg-white mt-[20%]">
+    <div className="lg:flex container w-full mx-auto bg-white">
        <div className="lg:w-[55%] lg:pr-9 mt-16 m-5">
       <h2 className="text-xl font-normal text-blue-500 italic">About the Music School</h2>
-      <h2 className="text-5xl mt-4 font-medium text-gray-700 font-serif">Providing Service Since 2008</h2>
+      <h2 className="text-5xl mt-4 font-medium text-gray-700 font-serif">Grow Your Skills For Free With Rythme Academy</h2>
       <p className="mt-6 text-base font-light ">
         Dramatically Morph Reliable Experiences Without Strategic Methodologies. Quickly Create Frictionless Strategic Theme Areas.
         Immerse Yourself In the World of Music. Explore New Sounds and Vibrations. Discover the Art of Harmonious Melodies.
@@ -15,7 +15,7 @@ export default function AboutUs() {
       </p>
       <button className=" UI-Button mt-5 ">LEARN MORE</button>
     </div>
-      <div className="lg:w-[45%] mt-12">
+      <div className="lg:w-[45%] mt-16">
         <div className="parent w-full">
           <div
             className="Card lg:w-[100%] rounded-xl"

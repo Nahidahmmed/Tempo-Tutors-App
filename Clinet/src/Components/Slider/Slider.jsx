@@ -56,7 +56,7 @@ export default function Slider() {
     };
   }, []);
   return (
-    <div className="carousel w-[100%] md:w-full lg:w-full">
+    <div className="carousel w-[100%] md:w-full lg:w-full mb-[15%]">
       <div className="list">
         <div className="item">
           <img src={image1} alt="" />
