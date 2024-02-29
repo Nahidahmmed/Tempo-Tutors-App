@@ -5,8 +5,8 @@ import image3 from "../../assets/music class image/image3.jpg";
 import image4 from "../../assets/music class image/image4.jpg";
 import "./Slider.css";
 export default function Slider() {
-  const [timeRunning] = useState(3000);
-  const [timeAutoNext] = useState(7000);
+  const [timeRunning] = useState(500);
+  const [timeAutoNext] = useState(5000);
 
   let runTimeOut;
   let runNextAuto;
@@ -61,81 +61,63 @@ export default function Slider() {
         <div className="item">
           <img src={image1} alt="" />
           <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%]">
-            <div className="author">LUNDEV</div>
-            <div className="title">DESIGN SLIDER</div>
-            <div className="topic">ANIMAL</div>
+            <div className="author">MusicMentor</div>
+            <div className="title">Music Mastery Class</div>
+            <div className="topic">Instrumental</div>
             <div className="des">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-              sequi, rem magnam nesciunt minima placeat, itaque eum neque
-              officiis unde, eaque optio ratione aliquid assumenda facere ab et
-              quasi ducimus aut doloribus non numquam. Explicabo, laboriosam
-              nisi reprehenderit tempora at laborum natus unde. Ut,
-              exercitationem eum aperiam illo illum laudantium?
+              Unleash your musical potential with our comprehensive voice music
+              class. Dive into vocal technique, harmony theory, and captivating
+              performance. Whether you're a beginner or seasoned vocalist, join
+              us today and discover the joy of singing with confidence and
+              expression!
             </div>
-            <div className="buttons">
-              <button>SEE MORE</button>
-              <button>SUBSCRIBE</button>
-            </div>
+           
           </div>
         </div>
         <div className="item">
           <img src={image2} alt="" />
-          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%] w">
-            <div className="author">LUNDEV</div>
-            <div className="title">DESIGN SLIDER</div>
-            <div className="topic">ANIMAL</div>
+          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%]">
+            <div className="author">RhythmRocks</div>
+            <div className="title">Guitar Sessions</div>
+            <div className="topic">Rhythm</div>
             <div className="des">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-              sequi, rem magnam nesciunt minima placeat, itaque eum neque
-              officiis unde, eaque optio ratione aliquid assumenda facere ab et
-              quasi ducimus aut doloribus non numquam. Explicabo, laboriosam
-              nisi reprehenderit tempora at laborum natus unde. Ut,
-              exercitationem eum aperiam illo illum laudantium?
+              Ignite your passion for music with our dynamic guitar mastery
+              class. Delve into fretboard techniques, music theory, and
+              captivating performance. Whether you're strumming chords or
+              shredding solos, join us today and unlock the full potential of
+              your guitar playing!
             </div>
-            <div className="buttons">
-              <button>SEE MORE</button>
-              <button>SUBSCRIBE</button>
-            </div>
+           
           </div>
         </div>
         <div className="item">
           <img src={image3} alt="" />
-          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%] w">
-            <div className="author">LUNDEV</div>
-            <div className="title">DESIGN SLIDER</div>
-            <div className="topic">ANIMAL</div>
+          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%]">
+            <div className="author">HarmonyHarbor</div>
+            <div className="title"> Workshop</div>
+            <div className="topic">Electric Guitar</div>
             <div className="des">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-              sequi, rem magnam nesciunt minima placeat, itaque eum neque
-              officiis unde, eaque optio ratione aliquid assumenda facere ab et
-              quasi ducimus aut doloribus non numquam. Explicabo, laboriosam
-              nisi reprehenderit tempora at laborum natus unde. Ut,
-              exercitationem eum aperiam illo illum laudantium?
+              Elevate your musical journey with our electrifying electric guitar
+              class. Explore advanced techniques, effects, and dynamic
+              performance. Whether you're a rocker or a blues aficionado, join
+              us today and unleash the power of electric guitar expression!
             </div>
-            <div className="buttons">
-              <button>SEE MORE</button>
-              <button>SUBSCRIBE</button>
-            </div>
+           
           </div>
         </div>
         <div className="item">
           <img src={image4} alt="" />
-          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%] w">
-            <div className="author">LUNDEV</div>
-            <div className="title">DESIGN SLIDER</div>
-            <div className="topic">ANIMAL</div>
+          <div className="content max-w-[70%] md:max-w-[80%] lg:max-w-[80%]">
+            <div className="author">StringsStudio</div>
+            <div className="title">Violin Masterclass</div>
+            <div className="topic">Strings</div>
             <div className="des">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-              sequi, rem magnam nesciunt minima placeat, itaque eum neque
-              officiis unde, eaque optio ratione aliquid assumenda facere ab et
-              quasi ducimus aut doloribus non numquam. Explicabo, laboriosam
-              nisi reprehenderit tempora at laborum natus unde. Ut,
-              exercitationem eum aperiam illo illum laudantium?
+              Ignite your musical journey with our enchanting violin mastery
+              class. Explore classical techniques, musical theory, and emotive
+              performance. Whether you're a beginner or seasoned player, join us
+              today and discover the timeless beauty of the violin!
             </div>
-            <div className="buttons">
-              <button>SEE MORE</button>
-              <button>SUBSCRIBE</button>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -144,29 +126,29 @@ export default function Slider() {
         <div className="item">
           <img src={image1} alt="" />
           <div className="content">
-            <div className="title">Name Slider</div>
-            <div className="description">Description</div>
+            <div className="title">Music Mastery</div>
+            
           </div>
         </div>
         <div className="item">
           <img src={image2} alt="" />
           <div className="content">
-            <div className="title">Name Slider</div>
-            <div className="description">Description</div>
+            <div className="title">Guitar Sessions</div>
+            
           </div>
         </div>
         <div className="item">
           <img src={image3} alt="" />
           <div className="content">
-            <div className="title">Name Slider</div>
-            <div className="description">Description</div>
+            <div className="title">Workshop</div>
+            
           </div>
         </div>
         <div className="item">
           <img src={image4} alt="" />
           <div className="content">
-            <div className="title">Name Slider</div>
-            <div className="description">Description</div>
+            <div className="title">Violin Masterclass</div>
+            
           </div>
         </div>
       </div>

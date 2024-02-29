@@ -31,14 +31,14 @@ export default function Home() {
       <Achievement />
       <div className="max-w-screen-xl mx-auto">
         <PopularInstructors />
-        <News />
-        <Events/>
       </div>
-      <Reviews />
       <div className="max-w-screen-xl mx-auto">
         <FeaturedStuff />
       </div>
+      <Reviews />
       <div className="max-w-screen-xl mx-auto">
+        <News />
+        <Events/>
         <Offers/>
         <ContactUs/>
       </div>
