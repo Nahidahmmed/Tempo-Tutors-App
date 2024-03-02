@@ -25,6 +25,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import ClassDetail from './Pages/ClassDetail/ClassDetail';
 import InstructorsDetail from './Pages/InstructorsDetail/InstructorsDetail';
 import AllInstructors from './Pages/AllInstructors/AllInstructors';
+import Payment from './Pages/Payment/Payment';
 
 const queryClient = new QueryClient()
 
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/mycart',
-        element: <MyCart></MyCart>
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
         path: '/users',
@@ -71,14 +72,18 @@ const router = createBrowserRouter([
         element: <AddClasses></AddClasses>
       },
       {
+        path: '/pay',
+        element: <Payment/>
+      },
+      {
         path: "/detail/:id",
-        element: <ClassDetail></ClassDetail>,
+        element: <PrivateRoute><ClassDetail></ClassDetail></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_BASE_URL}/classes/${params.id}`),
       },
       {
         path: "/instructorsDetail/:id",
-        element: <InstructorsDetail></InstructorsDetail>,
+        element: <PrivateRoute><InstructorsDetail></InstructorsDetail></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_BASE_URL}/instructors/${params.id}`),
       },

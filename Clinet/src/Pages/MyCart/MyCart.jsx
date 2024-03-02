@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import Title from "../../ReusedComponents/Title";
 import "./MyCart.css";
 import { FaPaypal, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function MyCart() {
   const [cart, refetch] = UseCarts();
   const handleDelete = (classes) => {
@@ -89,10 +90,12 @@ export default function MyCart() {
                       {classes.duration}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <button className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-[#4E9F3D] hover:bg-[#2E6B2E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E6B2E]">
-                        <FaPaypal className="h-5 w-5 mr-2" />
-                        Pay with PayPal
-                      </button>
+                      <Link to={"/pay"}>
+                        <button className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-[#4E9F3D] hover:bg-[#2E6B2E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E6B2E]">
+                          <FaPaypal className="h-5 w-5 mr-2" />
+                          Pay with PayPal
+                        </button>
+                      </Link>
                       <button
                         onClick={() => handleDelete(classes)}
                         className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-red-600 bg-red-50 hover:bg-red-100 ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
@@ -114,7 +117,11 @@ export default function MyCart() {
                 className="bg-white shadow overflow-hidden mt-10 mb-4"
               >
                 <div className="flex items-center">
-                  <img className="h-12 w-12 rounded-full ml-4" src={classes.image} alt="" />
+                  <img
+                    className="h-12 w-12 rounded-full ml-4"
+                    src={classes.image}
+                    alt=""
+                  />
                   <div className="px-4 py-5 sm:px-6">
                     <h3 className="text-lg font-semibold leading-6 text-gray-900">
                       {classes.name}
@@ -146,10 +153,12 @@ export default function MyCart() {
                     </dl>
                   </div>
                   <div className="px-4 py-4 sm:px-6">
-                    <button className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-[#4E9F3D] hover:bg-[#2E6B2E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E6B2E]">
-                      <FaPaypal className="h-5 w-5 mr-2" />
-                      Pay with PayPal
-                    </button>
+                    <Link to={"/pay"}>
+                      <button className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-[#4E9F3D] hover:bg-[#2E6B2E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E6B2E]">
+                        <FaPaypal className="h-5 w-5 mr-2" />
+                        Pay with PayPal
+                      </button>
+                    </Link>
                     <button
                       onClick={() => handleDelete(classes)}
                       className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-red-600 bg-red-50 hover:bg-red-100 ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
