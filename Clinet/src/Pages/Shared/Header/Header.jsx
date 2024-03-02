@@ -1,11 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FaMusic, FaSearch } from "react-icons/fa";
 import "./Header.css";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 export default function Header() {
-  //   const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () =>{
+      logOut()
+      .then(() =>{})
+      .catch(err => console.log(err))
+    }
 
   const menuItems = (
     <>
@@ -29,11 +36,11 @@ export default function Header() {
           Enroled Class
         </Link>
       </li>
-      {/* <li>
-        <Link className=" Button " to="/addclass">
-          Add Class
+      <li>
+        <Link className=" Button " onClick={handleLogout}>
+          logout
         </Link>
-      </li> */}
+      </li>
       <li>
         <Link className=" Button " to="/about">
           About Us
