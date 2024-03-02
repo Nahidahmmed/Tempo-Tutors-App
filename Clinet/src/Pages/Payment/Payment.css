@@ -26,18 +26,9 @@
     height: 55px;
     background: #F2F2F2;
     border-radius: 11px;
-    padding: 0;
-    border: 0;
     outline: none;
   }
   
-  .payment--options button svg {
-    height: 18px;
-  }
-  
-  .payment--options button:last-child svg {
-    height: 22px;
-  }
   
   .separator {
     width: calc(100% - 20px);

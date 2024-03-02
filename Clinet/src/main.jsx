@@ -26,6 +26,7 @@ import ClassDetail from './Pages/ClassDetail/ClassDetail';
 import InstructorsDetail from './Pages/InstructorsDetail/InstructorsDetail';
 import AllInstructors from './Pages/AllInstructors/AllInstructors';
 import Payment from './Pages/Payment/Payment';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 const queryClient = new QueryClient()
 
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
