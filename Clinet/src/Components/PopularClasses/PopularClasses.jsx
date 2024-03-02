@@ -15,6 +15,7 @@ export default function PopularClasses() {
         setClasses(data), setLoading(false);
       });
   }, []);
+  console.log(classes)
 
   if (loading) {
     return (
