@@ -14,13 +14,7 @@ export default function Reviews() {
         function clearNextTimeout() {
           clearTimeout(timeout);
         }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {s
-            slider.next();
-          }, 2000);
-        }
+        
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
             mouseOver = true;
@@ -28,13 +22,11 @@ export default function Reviews() {
           });
           slider.container.addEventListener("mouseout", () => {
             mouseOver = false;
-            nextTimeout();
+            
           });
-          nextTimeout();
+          
         });
         slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
       },
     ]
   );

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const InstructorCard = ({ instructor }) => {
   const {
     name,
-    class: className,
+    className,
     email,
     phone,
     office,

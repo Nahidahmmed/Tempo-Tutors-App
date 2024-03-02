@@ -31,8 +31,8 @@ export default function PopularClasses() {
       <Title title={"Popular Classes"} semititle={"Class"}></Title>
       <div className="mt-20">
         <div className="grid md:grid-cols-3 gap-10">
-          {classes.map((item) => (
-            <ClassCard key={item._id} item={item}></ClassCard>
+          {classes?.map((item) => (
+            <ClassCard key={item?._id} item={item}></ClassCard>
           ))}
         </div>
       </div>

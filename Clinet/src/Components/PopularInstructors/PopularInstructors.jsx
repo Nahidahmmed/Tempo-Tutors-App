@@ -18,8 +18,8 @@ const PopularInstructors = () => {
     <div className="my-[20%]">
       <Title title={"Featured Teachers"} semititle={"Staffs"}></Title>
       <div className="grid md:grid-cols-3 gap-10 my-20">
-        {instructors.map((instructor) => (
-          <InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>
+        {instructors?.map((instructor) => (
+          <InstructorCard key={instructor?._id} instructor={instructor}></InstructorCard>
         ))}
       </div>
     </div>

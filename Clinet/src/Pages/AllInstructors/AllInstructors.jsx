@@ -36,9 +36,9 @@ const AllInstructors = () => {
         route={"Instructors"}
       ></Banner>
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-24 max-w-screen-xl mx-auto">
-        {instructors.map((instructor) => (
+        {instructors?.map((instructor) => (
           <InstructorCard
-            key={instructor._id}
+            key={instructor?._id}
             instructor={instructor}
           ></InstructorCard>
         ))}

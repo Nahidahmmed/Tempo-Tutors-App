@@ -37,8 +37,8 @@ const AllClass = () => {
         route={banner.route}
       ></Banner>
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 pt-24 max-w-screen-xl mx-auto">
-        {classes.map((item) => (
-          <ClassCard item={item} key={item._id}></ClassCard>
+        {classes?.map((item) => (
+          <ClassCard item={item} key={item?._id}></ClassCard>
         ))}
       </div>
     </div>
