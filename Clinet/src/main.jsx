@@ -11,7 +11,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
 import AllClass from './Pages/AllClass/AllClass';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
+
 import {
   QueryClient,
   QueryClientProvider,
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/mycart',
-        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
+        element: <MyCart></MyCart>
       },
       {
         path: '/users',
@@ -79,13 +79,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/detail/:id",
-        element: <PrivateRoute><ClassDetail></ClassDetail></PrivateRoute>,
+        element: <ClassDetail></ClassDetail>,
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_BASE_URL}/classes/${params.id}`),
       },
       {
         path: "/instructorsDetail/:id",
-        element: <PrivateRoute><InstructorsDetail></InstructorsDetail></PrivateRoute>,
+        element: <InstructorsDetail></InstructorsDetail>,
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_BASE_URL}/instructors/${params.id}`),
       },

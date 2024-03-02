@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import BannerImage from "../../assets/music class image/image5.jpg";
-import InstructorCard from "../../ReusedComponents/InsTructorCard/InsTructorCard";
+
 import Banner from "../../ReusedComponents/Banner/Banner";
+import InstructorCard from "../../ReusedComponents/InsTructorCard/InsTructorCard";
 
 
 const AllInstructors = () => {
