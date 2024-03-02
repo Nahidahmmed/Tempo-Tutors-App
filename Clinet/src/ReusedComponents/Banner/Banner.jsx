@@ -13,10 +13,10 @@ export default function Banner({image,tittle,text,route}) {
             <span className="text-gray-400">{route}</span>
           </Link>
 
-          <h1 className="text-2xl sm:text-5xl mt-24 mb-2 w-[80%]">
+          <h1 className="text-4xl xl:text-5xl lg:text-5xl md:text-5xl mt-24 mb-2 xl:w-[80%] lg:w-[80%] md:w-[80%] w-full">
             {tittle}
           </h1>
-          <p className="text-base sm:text-lg w-[50%]">
+          <p className="text-base sm:text-lg xl:w-[50%] lg:w-[50%] md:w-[50%]">
           {text}
           </p>
         </div>

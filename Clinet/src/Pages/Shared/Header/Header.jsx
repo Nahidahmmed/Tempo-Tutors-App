@@ -10,32 +10,32 @@ export default function Header() {
   const menuItems = (
     <>
       <li>
-        <Link className="Button" to="/">
+        <Link className=" Button " to="/">
           Home
         </Link>
       </li>
       <li>
-        <Link className="Button" to="/classes">
+        <Link className=" Button " to="/classes">
           Class
         </Link>
       </li>
       <li>
-        <Link className="Button" to="/instructors">
+        <Link className=" Button" to="/instructors">
           Instructors
         </Link>
       </li>
       <li>
-        <Link className="Button" to="/mycart">
+        <Link className=" Button " to="/mycart">
           Enroled Class
         </Link>
       </li>
       {/* <li>
-        <Link className="Button" to="/addclass">
+        <Link className=" Button " to="/addclass">
           Add Class
         </Link>
       </li> */}
       <li>
-        <Link className="Button" to="/about">
+        <Link className=" Button " to="/about">
           About Us
         </Link>
       </li>
@@ -96,7 +96,7 @@ export default function Header() {
               </label>
             </div>
             {isMenuOpen && (
-              <ul className="mt-[28px] z-10 p-2 shadow bg-black bg-opacity-80 rounded w-52 absolute">
+              <ul className="mt-[28px] z-10 p-2 shadow bg-black bg-opacity-80 rounded w-52 absolute grid gap-5 text-lg border-2">
                 {menuItems}
               </ul>
             )}
@@ -113,8 +113,8 @@ export default function Header() {
 
         <div className="text-xl lg:pr-2 flex items-center">
           {/* input */}
-          <div className="container border-b-2">
-            <div className="mainbox lg:w-[230px]">
+          <div className="w-[130px] lg:w-[235px] border-b-2">
+            <div className="mainbox lg:w-[230px] md:w-[230px] w-[130px]">
               <div className="iconContainer">
                 <button onClick={toggleSearch}>
                   <FaSearch className="w-9" />
@@ -122,7 +122,7 @@ export default function Header() {
               </div>
 
               <input
-                className="search_input w-[120px] lg:w-[185px]"
+                className="search_input w-[100px] lg:w-[185px]"
                 placeholder="search"
                 name="search"
                 type="text"
@@ -132,10 +132,10 @@ export default function Header() {
               {/* <button onClick={handleLogout}>logout</button> */}
             </div>
             {suggestions.length > 0 && (
-              <ul className="lg:w-[230px] w-[160px] mt-[1px] lg:mt-[123px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">
+              <ul className="lg:w-[230px] w-[130px] mt-[1px] lg:mt-[12px] text-sm mr-10 p-3 shadow bg-black bg-opacity-60 rounded-b-xl absolute">
                 {suggestions.slice(0, 8).map((Class, index) => (
                   <li key={index} onClick={() => handleSuggestionClick(Class)}>
-                    <button className="pb-2">{Class.class_name}</button>
+                    <Link to={`/detail/${Class._id}`}><button className="pb-2">{Class.class_name}</button></Link>
                   </li>
                 ))}
               </ul>
